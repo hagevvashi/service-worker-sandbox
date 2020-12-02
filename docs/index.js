@@ -22,7 +22,7 @@ document.getElementById("app").innerHTML = `
 </section>
 `;
 
-const buttonEl = doumebt.getElementById("js-button");
+const buttonEl = document.getElementById("js-button");
 const tasksUlEl = document.getElementById("js-tasks");
 buttonEl.addEventListener("click", async (event) => {
   try {
