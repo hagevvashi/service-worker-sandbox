@@ -10,11 +10,25 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-const rootEl = document.getElementById("app");
-
-rootEl.innerHTML = `
+document.getElementById("app").innerHTML = `
 <section>
   <h1>Hello World</h1>
-  <div>foooooo</div>
+  <div>
+    <ul id="js-tasks">
+      <li>foo</li>
+    </ul>
+    <button id="js-button" type="button">リクエスト</button>
+  </div>
 </section>
 `;
+
+const buttonEl = doumebt.getElementById("js-button");
+const tasksUlEl = document.getElementById("js-tasks");
+buttonEl.addEventListener("click", async (event) => {
+  try {
+    const response = await fetch("./api/tasks/1");
+    console.log(response.json());
+  } catch(e) {
+    console.log(e);
+  }
+});
