@@ -1,7 +1,7 @@
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const registration = await navigator.serviceWorker.register("./sw.js", { scope: "./api" });
+      const registration = await navigator.serviceWorker.register("./sw.js", { scope: "./api/tasks" });
       console.log(registration);
     } catch(e) {
       console.log("fail");
